@@ -1,0 +1,25 @@
+Soal 1 Membuat Database
+CREATE DATABASE myshop;
+
+Soal 2 Membuat Table di Dalam Database
+- USERS
+CREATE TABLE users ( id int AUTO_INCREMENT PRIMARY KEY, name varchar(255) NOT null, email varchar(255) NOT null, password varchar(255) NOT null );
+- CATEGORIES
+CREATE TABLE categories ( id INT AUTO_INCREMENT PRIMARY KEY, name varchar(255) NOT NULL );
+- ITEMS
+CREATE TABLE items ( id int AUTO_INCREMENT PRIMARY KEY, name varchar(255) NOT null, description varchar(255) NOT null, price int(11) NOT null, stock int(5) NOT null, category_id int(11) NOT null, FOREIGN KEY(category_id)REFERENCES categories(id) );
+
+Soal 3 Memasukkan Data pada Table
+INSERT INTO categories (name) VALUES("gadget"), ("cloth"), ("men"), ("women"), ("branded");
+INSERT INTO users (name, email, password) VALUES("John doe", "john@doe.com", "john123"), ("Jane doe", "jane@doe.com", "jenita123");
+INSERT INTO items (name, description, price, stock, category_id) VALUES("Sumsang b50", "hape keren dari merek sumsang", 4000000, 100, 1), ("Uniklooh", "baju keren dari brand ternama", 500000, 50, 2), ("IMHO Watch", "jam tangan anak yang jujur banget", 2000000, 1);
+
+Soal 4 Mengambil Data dari Database
+a.) SELECT id, name, email FROM users;
+b.) SELECT * FROM items WHERE price > 1000000;
+SELECT * FROM items WHERE title LIKE "%watch%";
+c.) SELECT items.*, categories.name FROM items INNER JOIN categories ON items.category_id = categories.name;
+
+Soal 5 Mengubah Data dari Database
+UPDATE items SET price = 250000 WHERE id=1;
+
