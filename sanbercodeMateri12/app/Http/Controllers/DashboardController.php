@@ -15,9 +15,10 @@ class DashboardController extends Controller
     }
 
     public function home(Request $request) {
+       
         $firstName = $request->input('firstname');
         $lastName = $request->input('lastname');
 
-        return view('home' ["firstname" => $firstName, "lastname" => $lastName]); 
+        return view('home', ["firstName" => $firstName, "lastName" => $lastName]); 
     }
 }

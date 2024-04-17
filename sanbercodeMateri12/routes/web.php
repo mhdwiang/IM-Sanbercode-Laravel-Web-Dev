@@ -19,3 +19,11 @@ Route::get('/', [DashboardController::class, 'index']);
 Route::get('/biodata', [DashboardController::class, 'daftar']);
 
 Route::post('/home', [DashboardController::class, 'home']);
+
+Route::get('/table', function(){
+    return view('table');
+});
+
+Route::get('/data-table', function(){
+    return view('data-table');
+});

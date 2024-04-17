@@ -1,12 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Form</title>
-</head>
-<body>
-    <form action="/home" method="post">
+@extends('layouts.master')
+
+@section('judul')
+Halaman biodata
+@endsection
+
+@section('content')
+<form action="/home" method="POST">
         @csrf
         <h2>Buat Account Baru</h2>
         <h3>Sign Up Form</h3>
@@ -33,7 +32,6 @@
         <input type="submit" value="Sign Up">
     </form>
     <a href="/">Kembali ke Home</a>
-    
-    
-</body>
-</html>
+@endsection
+   
+  
